@@ -7,13 +7,19 @@ const addToLocalStorage = (inputName) => {
   input.value = "";
 };
 
-const createUserCookie = (inputName, duration) => {
+const createUserCookie = (inputName, duration = 1) => {
   const input = document.querySelector(`[name="${inputName}"]`);
   let date = new Date();
   date.setTime(date.getTime() + duration * 24 * 60 * 60 * 1000);
-  document.cookie = `name=${
-    input.value
-  }; expires=${date.toUTCString()}; path=/`;
+  if (input.value == "") {
+    alert(`Por favor insira um nome de usuário!`);
+  } else {
+    document.cookie = `name=${
+      input.value
+    }; expires=${date.toUTCString()}; path=/`;
+    input.value = "";
+    alert(`O usuário ${getCookie("name")} foi criado!`);
+  }
 };
 
 const getCookie = (name) => {
@@ -54,8 +60,6 @@ const addButton = (text, type = "submit") => {
 
   button.addEventListener("click", (e) => {
     e.preventDefault();
-    // addToLocalStorage("name");
-    // alert(`O usuário ${localStorage.getItem("name")} criado com sucesso!`);
     createUserCookie("name", 1);
   });
 };
@@ -74,9 +78,8 @@ const fibonacci = (size) => {
 
 const handleClick = (e) => {
   e.preventDefault();
-  addLabel("name", "Nome: ");
+  addLabel("name", "Nome de usuário: ");
   addInput("name");
-  //   addLabel("fibonacci", fibonacci(10));
   addButton("Enviar");
   btnAdd.classList.remove("d-block");
   btnAdd.classList.add("d-none");
