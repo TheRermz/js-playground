@@ -47,3 +47,20 @@ body {
   display: flex;
   align-items: center;
 }
+
+.rollable-table {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.table-values {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.label-resp {
+  display: block;
+  width: 100%;
+}

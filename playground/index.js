@@ -1,5 +1,7 @@
 const btnAdd = document.querySelector(".btn-add");
 const rootDiv = document.querySelector(".root");
+const rollableTable = document.querySelector(".rollable-table");
+const tableValues = document.querySelector(".table-values");
 
 const addToLocalStorage = (inputName) => {
   const input = document.querySelector(`[name="${inputName}"]`);
@@ -64,6 +66,31 @@ const addButton = (text, type = "submit") => {
   });
 };
 
+const rollDie = (faces) => {
+  return Math.floor(Math.random() * faces + 1);
+};
+
+const addRollButton = (faces = 20, type = "submit", text = `D${faces}`) => {
+  const existingBtn = document.querySelectorAll(".roll-btn");
+  if (existingBtn.length >= 7) return;
+  const button = document.createElement("button");
+  button.textContent = text;
+  button.type = type;
+  button.classList.add("dynamic-btn", "roll-btn");
+  rollableTable.appendChild(button);
+  const result = document.createElement("label");
+  result.classList.add("label-resp", "label-container");
+  tableValues.appendChild(result);
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let die = rollDie(faces);
+    console.log(die);
+    result.textContent = `D${faces}: ${die} `;
+  });
+};
+
 const fibonacci = (size) => {
   if (size < 1) return [];
   if (size === 1) return [0];
@@ -81,6 +108,13 @@ const handleClick = (e) => {
   addLabel("name", "Nome de usuário: ");
   addInput("name");
   addButton("Enviar");
+  addRollButton(4);
+  addRollButton(6);
+  addRollButton(8);
+  addRollButton(10);
+  addRollButton(12);
+  addRollButton(20);
+  addRollButton(100);
   btnAdd.classList.remove("d-block");
   btnAdd.classList.add("d-none");
 };
