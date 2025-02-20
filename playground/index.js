@@ -66,11 +66,11 @@ const addButton = (text, type = "submit") => {
   });
 };
 
-const rollDie = (faces) => {
-  return Math.floor(Math.random() * faces + 1);
+const rollDie = (sides) => {
+  return Math.floor(Math.random() * sides + 1);
 };
 
-const addRollButton = (faces = 20, type = "submit", text = `D${faces}`) => {
+const addRollButton = (sides = 20, type = "submit", text = `D${sides}`) => {
   const existingBtn = document.querySelectorAll(".roll-btn");
   if (existingBtn.length >= 7) return;
   const button = document.createElement("button");
@@ -85,9 +85,9 @@ const addRollButton = (faces = 20, type = "submit", text = `D${faces}`) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
 
-    let die = rollDie(faces);
+    let die = rollDie(sides);
     console.log(die);
-    result.textContent = `D${faces}: ${die} `;
+    result.textContent = `D${sides}: ${die} `;
   });
 };
 
@@ -115,8 +115,7 @@ const handleClick = (e) => {
   addRollButton(12);
   addRollButton(20);
   addRollButton(100);
-  btnAdd.classList.remove("d-block");
-  btnAdd.classList.add("d-none");
+  btnAdd.classList.replace("d-block", "d-none");
 };
 
 btnAdd.addEventListener("click", handleClick);
