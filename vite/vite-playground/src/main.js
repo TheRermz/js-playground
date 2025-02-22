@@ -2,23 +2,17 @@ import "./style.css";
 import javascriptLogo from "./javascript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.js";
+import dayjs from "dayjs";
+import "dayjs/locale/pt-br";
+dayjs.locale("pt-br");
+
+const today = dayjs().format("dddd, DD [de] MMMM [de] YYYY");
+const hourofTheDay = dayjs().format("HH:mm:ss");
 
 document.querySelector("#app").innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
+  <h1>Dia e hora</h1>
+  <p>Hoje é ${today}</p>
+  <p>Agora são ${hourofTheDay}</p>
 `;
 
 setupCounter(document.querySelector("#counter"));
