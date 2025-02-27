@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+
+#main-container {
+  display: flex;
+  gap: 2rem;
+}
+
+#value::-webkit-inner-spin-button,
+#value::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+#value {
+  appearance: textfield;
+}

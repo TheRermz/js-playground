@@ -1,0 +1,16 @@
+{
+  "name": "consumindo-api-financas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "json-server": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
