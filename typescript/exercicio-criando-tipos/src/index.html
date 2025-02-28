@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planetas</title>
+  </head>
+  <body>
+    <h1>Planetóides</h1>
+    <form>
+      <label for="planet-name">Nome do Planeta:</label>
+      <input type="text" name="planet-name" id="planet-name" />
+      <label for="coord">Coordenadas</label>
+      <input type="text" name="coord" id="coord" />
+      <label for="situation">Situação</label>
+      <select name="situation" id="situation">
+        <option value="Habitado">Habitado</option>
+        <option value="Habitável">Habitável</option>
+        <option value="Inabitável">Inabitável</option>
+        <option value="Inexplorado">Inexplorado</option>
+      </select>
+      <label for="satellites">Satélites</label>
+      <input type="text" name="satellites" id="satellites" />
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="root"></div>
+    <script src="../dist/main.js"></script>
+  </body>
+</html>
