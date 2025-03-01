@@ -1,4 +1,5 @@
 import { Spaceship } from "./export.ts";
+import * as lodash from "lodash";
 
 interface BattleSpaceship extends Spaceship {
   weapons: number;
