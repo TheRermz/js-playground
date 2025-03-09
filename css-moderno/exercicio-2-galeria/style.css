@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #bebebe;
+}
+
+.galery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.galery > img {
+  height: 300px;
+  width: 300px;
+}
+
+/*
+    resolução
+    body {
+  background-color: #232323;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 1rem 2rem;
+}
+
+.galery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .125rem; // 2px
+}
+
+.galery > img {
+   aspect-ratio: 1 / 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 12rem;
+  height: 12rem;
+  width: 12rem;
+  object-fit: cover;
+}
+*/

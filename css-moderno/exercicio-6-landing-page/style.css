@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --color-white: #ffffff;
+  --light-bg: #e0e0e0;
+  --color-primary: #6c63ff;
+  --color-primary-hover: #5c54fc;
+  --dark-bg: #2c2c2e;
+  --color-black: #070707;
+  --light-text: #a7a9a5;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--color-white);
+}
+
+.btn {
+  display: flex;
+  padding: 0.75rem;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  width: fit-content;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--color-white);
+}
+
+.btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn:active {
+  background-color: var(--color-primary-hover);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./images/team.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.hero-content > h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content > p {
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.speakers {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.speakers-grid {
+  display: grid;
+}
+
+.speaker-card {
+  border: 1px solid var(--color-black);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  background-color: var(--color-black);
+}
+
+.speaker-card > img {
+  border-radius: 50%;
+}
+
+.schedule {
+  text-align: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.schedule-grid {
+  display: grid;
+}
+
+.schedule-item {
+  text-align: left;
+  border: 1px solid var(--color-black);
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 0 2rem 2rem;
+  background-color: var(--color-black);
+}
+
+.schedule-item > h3 {
+  margin-bottom: 1rem;
+}
+
+.newsletter {
+  display: block;
+  width: 100%;
+}
+
+.newsletter-grid {
+  display: block;
+}
+
+.newsletter-image > img {
+  width: 100%;
+  padding: 2rem;
+}
+
+.newsletter-text {
+  text-align: center;
+  padding: 1rem;
+}
+
+.newsletter-text > h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.newsletter-text > p {
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: block;
+  width: 100%;
+}
+
+.newsletter-form > button {
+  margin: 0 auto;
+}
+
+.form-group {
+  display: block;
+  width: 100%;
+}
+
+.form-group > label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form-group > input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  height: 2rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer > p {
+  margin-bottom: 1rem;
+}
+
+.footer > a {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 769px) {
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .newsletter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+  }
+
+  .newsletter-image > img {
+    height: 78%;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: var(--light-bg);
+    color: var(--color-black);
+  }
+
+  .speaker-card {
+    border: 1px solid var(--color-white);
+    background-color: var(--color-white);
+  }
+
+  .schedule-item {
+    border: 1px solid var(--color-white);
+    background-color: var(--color-white);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg);
+    color: var(--color-white);
+  }
+
+  .speaker-card {
+    border: 1px solid var(--color-black);
+    background-color: var(--color-black);
+  }
+
+  .schedule-item {
+    background-color: var(--color-black);
+  }
+}
